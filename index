@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATH ROCKET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="estrellas"></div>
+
+    <!-- INICIO -->
+    <section id="inicio" class="pantalla activa">
+        <div class="logo">
+            <span>🚀</span>
+            <h1>MATH ROCKET</h1>
+            <p>Desafío Matemático</p>
+        </div>
+
+        <div class="registro">
+            <h2>👨‍🚀 Registro del jugador</h2>
+
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellido" placeholder="Apellido">
+
+            <select id="curso">
+                <option value="">Selecciona tu curso</option>
+                <option value="1° Medio">1° Medio</option>
+                <option value="2° Medio">2° Medio</option>
+                <option value="3° Medio">3° Medio</option>
+                <option value="4° Medio">4° Medio</option>
+            </select>
+
+            <button id="btnComenzar">🚀 COMENZAR</button>
+        </div>
+
+        <div class="info-juego">
+            <div>
+                <strong>7</strong>
+                <span>Preguntas</span>
+            </div>
+
+            <div>
+                <strong>10s</strong>
+                <span>Por pregunta</span>
+            </div>
+
+            <div>
+                <strong>1250</strong>
+                <span>Puntos máximos</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JUEGO -->
+    <section id="juego" class="pantalla">
+
+        <div class="barra-superior">
+            <div>
+                👨‍🚀
+                <span id="jugadorActual"></span>
+            </div>
+
+            <div>
+                🏫
+                <span id="cursoActual"></span>
+            </div>
+
+            <div>
+                🏆
+                <span id="puntos">0</span> pts
+            </div>
+        </div>
+
+        <div class="progreso">
+            <div class="texto-pregunta">
+                Pregunta <span id="numeroPregunta">1</span> de 7
+            </div>
+
+            <div class="nivel">
+                <span id="nivel"></span>
+            </div>
+        </div>
+
+        <div class="temporizador">
+            <div class="tiempo-texto">
+                ⏱️ <span id="tiempo">10</span>
+            </div>
+
+            <div class="barra-tiempo">
+                <div id="barraTiempo"></div>
+            </div>
+        </div>
+
+        <div class="pregunta-card">
+            <h2 id="pregunta">Pregunta</h2>
+
+            <div class="respuestas">
+                <button class="respuesta" id="respuesta0"></button>
+                <button class="respuesta" id="respuesta1"></button>
+                <button class="respuesta" id="respuesta2"></button>
+                <button class="respuesta" id="respuesta3"></button>
+            </div>
+
+            <p id="mensaje"></p>
+        </div>
+
+        <div class="marcador">
+            <span>🔥 Racha: <strong id="racha">0</strong></span>
+            <span>✅ Correctas: <strong id="correctas">0</strong></span>
+        </div>
+
+    </section>
+
+
+    <!-- RESULTADO -->
+    <section id="resultado" class="pantalla">
+
+        <div class="resultado-card">
+
+            <div class="trofeo">🏆</div>
+
+            <h1>¡Partida terminada!</h1>
+
+            <p class="jugador-final" id="nombreFinal"></p>
+
+            <div class="puntaje-grande">
+                <span id="puntajeFinal">0</span>
+                <small>PUNTOS</small>
+            </div>
+
+            <div class="estadisticas">
+                <div>
+                    <strong id="preguntasCorrectas">0</strong>
+                    <span>Correctas</span>
+                </div>
+
+                <div>
+                    <strong id="mejorRacha">0</strong>
+                    <span>Mejor racha</span>
+                </div>
+            </div>
+
+            <button id="btnRocket">🚀 VER MI VIAJE</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROCKET -->
+    <section id="rocket" class="pantalla">
+
+        <div class="rocket-header">
+            <p>🚀 VIAJE DE</p>
+            <h1 id="rocketJugador"></h1>
+            <span id="rocketPuntos"></span>
+        </div>
+
+        <div class="espacio">
+
+            <div class="estrellas-fondo"></div>
+
+            <!-- PLANETA 1 -->
+            <div class="planeta planeta1">
+                <div class="planeta-cuerpo">🌎</div>
+                <strong>TIERRA</strong>
+                <span>450 pts</span>
+                <small>no ganaste nada</small>
+            </div>
+
+            <!-- PLANETA 2 -->
+            <div class="planeta planeta2">
+                <div class="planeta-cuerpo">🪐</div>
+                <strong>SATURNO</strong>
+                <span>600 pts</span>
+                <small>🍬 1 dulces</small>
+            </div>
+
+            <!-- PLANETA 3 -->
+            <div class="planeta planeta3">
+                <div class="planeta-cuerpo">🌌</div>
+                <strong>PLANETA FINAL</strong>
+                <span>800 pts</span>
+                <small>⭐ 2 décimas</small>
+            </div>
+
+            <!-- COHETE -->
+            <div id="cohete" class="cohete">
+                🚀
+                <div id="nombreCohete"></div>
+            </div>
+
+        </div>
+
+        <div id="resultadoRocket" class="premio">
+            Preparando lanzamiento...
+        </div>
+
+        <button id="btnRankingRocket">🏆 VER RANKING</button>
+
+    </section>
+
+
+    <!-- RANKING -->
+    <section id="ranking" class="pantalla">
+
+        <div class="ranking-card">
+
+            <h1>🏆 RANKING</h1>
+
+            <p>Mejores jugadores por curso</p>
+
+            <div class="filtros">
+                <button class="filtro activo" data-curso="1° Medio">1°</button>
+                <button class="filtro" data-curso="2° Medio">2°</button>
+                <button class="filtro" data-curso="3° Medio">3°</button>
+                <button class="filtro" data-curso="4° Medio">4°</button>
+            </div>
+
+            <h2 id="cursoRanking">1° Medio</h2>
+
+            <div id="listaRanking"></div>
+
+            <button id="btnVolver">🚀 VOLVER AL INICIO</button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Este proyecto fue creado por <strong>3° Medio Programación</strong>
+        <br>
+        Liceo Insuco Talca · 2026
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
